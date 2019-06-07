@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'services/get_quiz.dart';
 
 class QuizCard extends StatefulWidget {
   @override
@@ -45,6 +46,8 @@ class _QuizCardState extends State<QuizCard> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
                             Card(
+                              color:
+                                  _selectedButton ? Colors.white : Colors.green,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(15.0),
                               ),
@@ -72,6 +75,8 @@ class _QuizCardState extends State<QuizCard> {
                               ),
                             ),
                             Card(
+                              color:
+                                  _selectedButton ? Colors.green : Colors.white,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(15.0),
                               ),
@@ -101,7 +106,7 @@ class _QuizCardState extends State<QuizCard> {
                           ],
                         ),
                       ),
-                    ]),
+                    ],),
               ),
             ),
           ),

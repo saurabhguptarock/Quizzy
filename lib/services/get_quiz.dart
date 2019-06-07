@@ -1,8 +1,8 @@
 import 'package:http/http.dart' as http;
 
-getQuiz(int no, int category, String difficulty, String type) async {
-  var url =
-      'https://opentdb.com/api.php?amount=$no&category=$category&difficulty=$difficulty&type=$type';
-  var response = await http.get(url);
-  print(response.body);
+Future<http.Response> getQuizService(
+    int amount, int category, String difficulty) async {
+  String url =
+      'https://opentdb.com/api.php?amount=$amount&category=$category&difficulty=$difficulty&type=multiple';
+  return await http.get(url);
 }
